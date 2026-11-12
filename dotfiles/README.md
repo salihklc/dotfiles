@@ -6,10 +6,11 @@ Portable Mac setup: **Homebrew apps**, **sdkman**, **nvm**, **Herdr + pi**, shel
 
 ```bash
 cd ~/lab/dotfiles
+cp config/company.env.example config/company.env   # COMPANY_DOMAIN=...
 cp secrets/dotfiles-secrets.env.example ~/.config/dotfiles-secrets.env
-cp secrets/netrc.example ~/.netrc   # düzenle, chmod 600
 ./install.sh --shell-hook           # isteğe bağlı: .zshrc hook
-./install.sh                        # profile: dev
+./install.sh                        # profile: dev → render + link configs
+cp .rendered/secrets/netrc.example ~/.netrc && chmod 600 ~/.netrc
 ```
 
 Profiller: `./install.sh --list-profiles` → `dev`, `jarvis-pi`, `minimal`.
@@ -46,13 +47,25 @@ Her satır bir uygulama/kurulum adımı. `profiles/dev.txt` örneği:
 
 JetBrains IDE’ler (IntelliJ Release, GoLand, DataGrip): Toolbox üzerinden manuel — `cask-jetbrains-toolbox.sh` sonrası Toolbox’tan **Release** channel.
 
+## Company domain (`COMPANY_DOMAIN`)
+
+Şablonlar `templates/` altında; `envsubst` ile `.rendered/` üretilir (gitignore).
+
+Öncelik: `~/.config/dotfiles-company.env` → `config/company.env` → `config/company.env.example`.
+
+```bash
+export COMPANY_DOMAIN=my.company.com
+./scripts/render-templates.sh
+./install.sh --only-link
+```
+
 ## Secrets
 
-Repoda **sadece** `*.example`. Gerçek dosyalar:
+Repoda **sadece** `*.example` / `*.tpl`. Gerçek dosyalar:
 
 - `~/.config/dotfiles-secrets.env`
-- `~/.netrc`
-- `~/.npmrc` (token için `home/.npmrc.example` + env)
+- `~/.netrc` (kaynak: `.rendered/secrets/netrc.example`)
+- `~/.npmrc` (kaynak: `.rendered/home/.npmrc.example` + token env)
 
 ## Güncelleme (PC A → B)
 

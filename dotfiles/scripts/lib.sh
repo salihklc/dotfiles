@@ -19,7 +19,8 @@ backup_if_file() {
 
 symlink_config() {
   local rel=$1
-  local src="${DOTFILES_ROOT}/home/${rel}"
+  local src_root="${2:-${DOTFILES_ROOT}/home}"
+  local src="${src_root}/${rel}"
   local dest="${HOME}/${rel}"
   if [[ ! -f "$src" ]]; then
     warn "Missing source $src — skip"

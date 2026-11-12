@@ -2,6 +2,9 @@
 *.env
 !env/*.example
 !secrets/*.example
+!config/company.env.example
+config/company.env
+.rendered/
 secrets/dotfiles-secrets.env
 secrets/netrc
 home/**/.netrc

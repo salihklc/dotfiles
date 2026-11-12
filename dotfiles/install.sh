@@ -70,14 +70,19 @@ cat <<EOF
 
 dotfiles install complete (profile: ${PROFILE}).
 
+Company domain (templates → MCP/GitLab URLs):
+  cp ${ROOT}/config/company.env.example ${ROOT}/config/company.env
+  # edit COMPANY_DOMAIN=your.company.tld then:
+  ${ROOT}/scripts/render-templates.sh && ${ROOT}/apps/link-configs.sh
+
 Secrets (manual, never commit):
   cp ${ROOT}/secrets/dotfiles-secrets.env.example ~/.config/dotfiles-secrets.env
-  cp ${ROOT}/secrets/netrc.example ~/.netrc && chmod 600 ~/.netrc
+  cp ${ROOT}/.rendered/secrets/netrc.example ~/.netrc && chmod 600 ~/.netrc
 
 Next:
   source ~/.zshrc
   pi auth check --provider mlplatform
-  cd ~/lab/jarvis-pi-lab && herdr && ./bootstrap-jarvis-pi.sh
+  cd <your-repo> && jarvis
 
 Repo: ${ROOT}
 EOF
