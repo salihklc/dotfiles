@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Secrets & credentials (never commit)
+.env
+.env.*
+*.env
+!**/.env.example
+!**/*.env.example
+!**/env/*.example
+!**/secrets/*.example
+secrets/dotfiles-secrets.env
+**/secrets/netrc
+**/.netrc
+*.pem
+*.key
+credentials.json
+
+# pi / Herdr runtime (sessions, room state)
+**/.pi/agent/sessions/
+**/.pi/cache/
+**/.pi/agent/rooms/
+
+# Local overrides & backups
+*.local
+*.secret
+*.bak.*
+*.orig
+
+# Editors / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*~
+
+# Dependencies (if anything under lab gets node/go vendor)
+node_modules/
+vendor/
+
+# Deprecated copy — canonical tree is dotfiles/
+jarvis-pi-dotfiles/

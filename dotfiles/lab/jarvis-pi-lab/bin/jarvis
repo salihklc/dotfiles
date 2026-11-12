@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Start Herdr jarvis-pi workspace for the current repo (or given path).
+set -euo pipefail
+
+KIT="${JARVIS_PI_KIT:-$HOME/lab/jarvis-pi-lab}"
+BOOT="${KIT}/bootstrap-jarvis-pi.sh"
+
+if [[ ! -f "$BOOT" ]]; then
+  echo "jarvis: missing $BOOT (set JARVIS_PI_KIT?)" >&2
+  exit 1
+fi
+
+args=()
+path=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -f|--force|-h|--help) args+=("$1"); shift ;;
+    -*) args+=("$1"); shift ;;
+    *)
+      path="$1"
+      shift
+      break
+      ;;
+  esac
+done
+
+if [[ -z "$path" ]]; then
+  if git rev-parse --show-toplevel &>/dev/null 2>&1; then
+    path="$(git rev-parse --show-toplevel)"
+  else
+    path="$(pwd)"
+  fi
+fi
+
+if [[ ! -d "$path" ]]; then
+  echo "jarvis: not a directory: $path" >&2
+  exit 1
+fi
+
+path="$(cd "$path" && pwd -P)"
+KIT_CANON="$(cd "$KIT" && pwd -P)"
+
+if [[ "$path" == "$KIT_CANON" ]]; then
+  echo "jarvis: orchestration kit dizinindesin ($KIT_CANON), kod repo'su değil." >&2
+  echo "  cd /path/to/monopd && jarvis" >&2
+  exit 1
+fi
+
+export JARVIS_PI_PROJECT="$path"
+export JARVIS_PI_KIT="$KIT"
+
+if ((${#args[@]} > 0)); then
+  exec bash "$BOOT" "${args[@]}" "$path"
+else
+  exec bash "$BOOT" "$path"
+fi

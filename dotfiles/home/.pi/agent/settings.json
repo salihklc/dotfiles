@@ -1,0 +1,26 @@
+{
+  "lastChangelogVersion": "0.84.2",
+  "theme": "dark",
+  "packages": [
+    "npm:@tglobal/pi-mlplatform-models",
+    "npm:pi-undo-tree",
+    "npm:pi-agents-talk-to-each-other"
+  ],
+  "defaultProvider": "mlplatform",
+  "defaultModel": "deepseek/deepseek-v4.1-flash-1017",
+  "enabledModels": [
+    "mlplatform/openai/gpt-5.6-luna",
+    "mlplatform/openai/gpt-5.6-terra",
+    "mlplatform/openai/gpt-5.6-sol",
+    "anthropic/claude-sonnet-4-6",
+    "mlplatform/deepseek-v4-flash-0731",
+    "mlplatform/abc/Qwen3-Max",
+    "mlplatform/qwen3.8-125b",
+    "mlplatform/gemini-3.8-flash",
+    "mlplatform/gemini-4-argon",
+    "mlplatform/moonshotai/kimi-k3",
+    "mlplatform/deepseek/deepseek-v4.1-flash-1017",
+    "mlplatform/openai/gpt-6-luna"
+  ],
+  "defaultThinkingLevel": "medium"
+}

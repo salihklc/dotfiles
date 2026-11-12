@@ -1,0 +1,10 @@
+.env
+*.env
+!env/*.example
+!secrets/*.example
+secrets/dotfiles-secrets.env
+secrets/netrc
+home/**/.netrc
+.DS_Store
+home/.pi/agent/sessions/
+home/.pi/cache/

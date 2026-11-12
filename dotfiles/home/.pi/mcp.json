@@ -1,0 +1,59 @@
+{
+	"servers": [
+		{
+			"name": "karpathy-wiki",
+			"transport": "http",
+			"url": "https://karpathy-wiki-mcp-server.mars.trendyol.com/mcp"
+		},
+		{
+			"name": "KafkaMCPServer",
+			"transport": "sse",
+			"url": "https://kafka-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "JiraMCPServer",
+			"transport": "sse",
+			"url": "https://jira-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "PandoraQAMCPServer",
+			"transport": "sse",
+			"url": "https://qa-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "TBPMCPServer",
+			"transport": "sse",
+			"url": "https://tbp-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "SonarMCPServer",
+			"transport": "sse",
+			"url": "https://sonar-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "PandoraMCPServer",
+			"transport": "sse",
+			"url": "https://pandora-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "GitlabMCPServer",
+			"transport": "sse",
+			"url": "https://gitlab-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "AresMCPServer",
+			"transport": "sse",
+			"url": "https://ares-mcp-server.mars.trendyol.com/sse"
+		},
+		{
+			"name": "OpenApiMCPServer",
+			"transport": "sse",
+			"url": "https://open-api-mcp-server.stage.trendyol.com/sse"
+		},
+		{
+			"name": "BeholderMCPServer",
+			"transport": "sse",
+			"url": "https://beholder-mcp-server.mars.trendyol.com/sse"
+		}
+	]
+}

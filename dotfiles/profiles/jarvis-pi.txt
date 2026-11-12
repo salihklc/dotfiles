@@ -1,0 +1,11 @@
+brew-ensure
+formula-jq
+vendor-nvm
+vendor-nvm-node
+vendor-herdr
+vendor-pi-cli
+link-configs
+vendor-pi-packages
+vendor-herdr-integrations
+install-lab
+link-jarvis-cli
