@@ -1,0 +1,9 @@
+# name|optional adopt path (one cask per line)
+iterm2|/Applications/iTerm.app
+visual-studio-code|/Applications/Visual Studio Code.app
+cursor|/Applications/Cursor.app
+keepingyouawake|/Applications/KeepingYouAwake.app
+maccy|/Applications/Maccy.app
+1password|/Applications/1Password.app
+jetbrains-toolbox|/Applications/JetBrains Toolbox.app
+podman-desktop|/Applications/Podman Desktop.app

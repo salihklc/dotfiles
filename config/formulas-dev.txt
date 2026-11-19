@@ -1,0 +1,4 @@
+git
+jq
+fzf
+podman

@@ -1,0 +1,10 @@
+brew-ensure
+formula-jq
+vendor-nvm
+vendor-nvm-node
+vendor-herdr
+vendor-cursor-agent
+vendor-claude-code
+vendor-pi-cli
+apply-gitconfig
+vendor-herdr-integrations

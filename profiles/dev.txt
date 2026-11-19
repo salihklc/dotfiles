@@ -1,0 +1,13 @@
+brew-ensure
+formulas-dev
+casks-dev
+vendor-nvm
+vendor-nvm-node
+vendor-sdkman
+sdkman-packages
+vendor-herdr
+vendor-cursor-agent
+vendor-claude-code
+vendor-pi-cli
+apply-gitconfig
+vendor-herdr-integrations

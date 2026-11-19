@@ -1,0 +1,4 @@
+# Format: <candidate> <version> [default]
+java 21.0.5-tem default
+gradle 9.6.1 default
+maven 3.9.6 default
