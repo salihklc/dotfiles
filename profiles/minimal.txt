@@ -1,4 +1,4 @@
-brew-ensure
-formula-git
-formula-jq
-apply-gitconfig
+brew/install
+brew/formulas/git
+brew/formulas/jq
+git/config

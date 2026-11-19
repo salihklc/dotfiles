@@ -2,3 +2,8 @@ git
 jq
 fzf
 podman
+ripgrep
+bat
+zoxide
+delta
+gettext
